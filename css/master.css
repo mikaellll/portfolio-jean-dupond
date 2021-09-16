@@ -1,3 +1,4 @@
+/*ANCHOR MOBILE*/
 /*ANCHOR Google Fonts*/
 /* Installation police via CDN */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -8,32 +9,30 @@
     --light: #f5f5f5f5;
     --dark: #222;
     --white: #fff;
-    --header-height: 100px;
+    --header-height : 100px;
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; 
     /*Inclus le padding et la bordure dans la taille des boîtes*/
     /* Provisoire */
     /* border: 1px dashed var(--white); */
     /* background-color: rgba(0,0,0,0.1); */
 }
 
-img,
-video {
+img, video {
     /*FIXME Attention à la taille du logo*/
     width: 100%;
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
     max-width: 1920px;
     font-family: 'Prompt', sans-serif;
     font-size: large;
 }
 
-.main-header,
-.main-footer {
+.main-header,.main-footer {
     min-height: var(--header-height);
     background-color: var(--dark);
     color: var(--white);
@@ -51,22 +50,11 @@ main {
     flex: 2 1 600px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1,h2,h3,h4,h5,h6,p {
     margin: 1rem 0;
 }
 
@@ -130,13 +118,11 @@ blockquote i {
 .f-s {
     flex: 1 1 120px;
 }
-
 .f-m {
     flex: 1 1 300px;
 }
-
 .f-l {
-    flex: 1 1 400px;
+    flex: 1 1 340px;
 }
 
 /*ANCHOR Spacing*/
@@ -155,6 +141,9 @@ blockquote i {
 .txt-center {
     text-align: center;
 }
+.txt-right {
+    text-align: right;
+}
 
 /*ANCHOR COMPONENTS*/
 
@@ -162,8 +151,7 @@ blockquote i {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
-    /*Passe en avant plan*/
+    z-index: 1;/*Passe en avant plan*/
 }
 
 .main-header__logo-img {
@@ -171,41 +159,7 @@ blockquote i {
     width: 150px;
 }
 
-.main-header__button {
-    padding: 1rem;
-    font-size: 2.5rem;
-}
 
-.menu__link {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--white);
-    transition: color 500ms;
-}
-
-.menu__link:hover {
-    color: var(--primary);
-}
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    /*HB - GD*/
-    background-color: transparent;
-    border: 4px solid var(--primary);
-    color: var(--primary);
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: border 500ms, background 500ms;
-}
-
-.btn:hover {
-    background-color: var(--primary);
-    border: 4px solid transparent;
-    color: var(--white);
-}
 
 .sm__link {
     text-decoration: none;
@@ -215,9 +169,9 @@ blockquote i {
 
 .card {
     margin-top: 16px;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 16px rgba(0,0,0,0.2);
     position: sticky;
-    top: calc(var(--header-height) + 3rem);
+    top: calc( var(--header-height) + 3rem );
     background-color: var(--white);
 }
 
@@ -244,5 +198,44 @@ blockquote i {
 }
 
 .shadow {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.form-contact {
+    width: 100%;
+    display: grid;/*PARENT*/
+    grid-template-areas:
+    "prenom prenom nom nom" 
+    "tel tel email email"
+    "subject subject subject subject"
+    "message message message message"
+    ". button button ."; 
+    gap: 1rem;
+}
+
+/*ENFANTS*/
+.form-contact__item--prenom {
+    grid-area: prenom;
+}
+.form-contact__item--nom {
+    grid-area: nom;
+}
+.form-contact__item--email {
+    grid-area: email;
+}
+.form-contact__item--tel {
+    grid-area: tel;
+}
+.form-contact__item--subject {
+    grid-area: subject;
+}
+.form-contact__item--message {
+    grid-area: message;
+}
+.form-contact__item--button {
+    grid-area: button;
+}
+
+.form-contact__item > * {/*Séléctionner les enfants  directs*/
+    width: 100%;
 }

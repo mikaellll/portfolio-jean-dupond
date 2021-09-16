@@ -12,6 +12,7 @@
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/topnav.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
 
         <div>
             <a class="main-header__logo-link" href="#">
-                <img class="main-header__logo-img" src="img/Logo_Jean_Dupond.svg" alt="Logo" width="150">
+                <img class="main-header__logo-img" src="./images/Logo-Jean-Dupond.svg" alt="Logo" width="150">
             </a>
         </div>
 
@@ -44,7 +45,7 @@
         <aside class="p-1">
             <section class="card d-flex f-wrap g-1">
                 <div class="card__item card__item--left f-s relative">
-                    <img class="card__img" src="img/zprofil.png" alt="Photo de Jean Dupond">
+                    <img class="card__img" src="./images/profil.png" alt="Photo de Jean Dupond">
                     <div class="red-square">
 
                     </div>
@@ -71,14 +72,54 @@
             </section>
         </aside>
         <main class="p-1">
+            <h1>Contact</h1>
+            <form class="form-contact" action="#">
+
+                <div class="form-contact__item form-contact__item--prenom">
+                    <label for="prenom">Prénom</label>
+                    <input id="prenom" type="text" required>
+                </div>
+
+                <div class="form-contact__item form-contact__item--nom">
+                    <label for="nom">Nom</label>
+                    <input id="nom" type="text" required>
+                </div>
+
+                <div class="form-contact__item form-contact__item--email">
+                    <label for="email">email</label>
+                    <input id="email" type="email" required>
+                </div>
+
+                <div class="form-contact__item form-contact__item--tel">
+                    <label for="tel">Tél</label>
+                    <input id="tel" type="tel" required>
+                </div>
+
+                <div class="form-contact__item form-contact__item--subject">
+                    <label for="sujet">Sujet</label>
+                    <input id="sujet" type="text" required value="Demande de renseignement">
+                </div>
+
+                <div class="form-contact__item form-contact__item--message">
+                    <label for="message">Message</label>
+                    <textarea id="message" cols="30" rows="10" required></textarea>
+                </div>
+                <div class="form-contact__item form-contact__item--button">
+                    <button type="submit">ENVOYER</button>
+                </div>
+
+
+
+
+            </form>
 
         </main>
     </div>
 
-    <footer class="p-1">
+    <footer class="main-footer p-1">
         <p class="txt-center"><small>© Jean-Dupond 2021</small></p>
-
     </footer>
+    <script src="js/topnav.js"></script>
 
 </body>
 
